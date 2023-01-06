@@ -2,11 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+
+import React, { useEffect, useState } from 'react';
 import PageLayout from '../components/PageLayout'
 import styles from '../styles/Home.module.css'
 
-function Home() {
+
+ export  default function Home() {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
