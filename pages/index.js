@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react'
 import PageLayout from '../components/PageLayout'
 import styles from '../styles/Home.module.css'
 
-import React, { useEffect, useState } from 'react';
-
 function Home() {
   const [fixtures, setFixtures] = useState([]);
 
