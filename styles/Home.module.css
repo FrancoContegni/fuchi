@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  place-content: center;
+  height: 100vg;
+  padding: 0 2rem;
+}
+
+.result{
+  text-align: center;
+  border: 1px solid black;
+}
+
+.result th {
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.result td {
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.result span {
+  padding: 1rem;
+  border: 1px solid black;
+  font-size: large;
+}
+
+.leagueName {
+  font-size: 12px;
+}
