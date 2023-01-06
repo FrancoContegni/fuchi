@@ -6,28 +6,36 @@ import { useEffect, useState } from 'react'
 import PageLayout from '../components/PageLayout'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import React, { useEffect, useState } from 'react';
+
+function Home() {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
-    fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2022', {
-      method: 'GET',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'X-RapidAPI-Key': '64e1a0803emsh90496dace2b1354p1de268jsn1bb15e616fca',
-        'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-        'content-type': 'application/json; charset=utf-8'
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        const fixtures = res.response
-        console.log('ARTICULOS', fixtures);
-        setFixtures(fixtures)
-      })
-  }, [])
+    async function fetchData() {
+      const res = await fetch(
+        'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2022',
+        {
+          method: 'GET',
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'X-RapidAPI-Key': '64e1a0803emsh90496dace2b1354p1de268jsn1bb15e616fca',
+            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
+            'content-type': 'application/json; charset=utf-8'
+          }
+        }
+      );
+      const data = await res.json();
+      const fixtures = data.response;
+      console.log('ARTICULOS', fixtures);
+      setFixtures(fixtures);
+    }
+    fetchData();
+  }, []);
+
   return (
     <PageLayout title="Fútbol App - Home">
+    
 
       <div className={styles.container}>
 
