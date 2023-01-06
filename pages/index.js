@@ -10,7 +10,7 @@ export default function Home() {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
-    fetch('URL-API', {
+    fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures', {
       method: 'GET',
       headers: {
         'Access-Control-Allow-Origin': '*',
